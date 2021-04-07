@@ -18,4 +18,9 @@ const createGrid = function () {
   }
 };
 
+const square = document.querySelector("div");
+square.addEventListener("mouseover", function (e) {
+  e.target.classList.replace("square", "color");
+});
+
 createGrid();
