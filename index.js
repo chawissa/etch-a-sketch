@@ -1,6 +1,4 @@
 const grid = document.querySelector(".container");
-const numSquare = prompt("Enter how many squares each row/column:", "16");
-const userInput = +numSquare;
 const btnReset = document.querySelector(".btn-reset");
 
 const createGrid = function () {
@@ -12,6 +10,9 @@ const createGrid = function () {
 };
 
 function updateGrid() {
+  const numSquare = prompt("Enter how many squares each row/column:", "16");
+  const userInput = +numSquare;
+
   grid.innerHTML = "";
   grid.style.setProperty("grid-template-columns", `repeat(${userInput}, 2fr)`);
   grid.style.setProperty("grid-template-rows", `repeat(${userInput}, 2fr)`);
@@ -28,13 +29,4 @@ square.addEventListener("mouseover", function (e) {
 });
 
 btnReset.addEventListener("click", updateGrid);
-
-// btnReset.addEventListener("click", function () {
-//   grid.innerHTML = "";
-//   grid.style.setProperty("grid-template-columns", `repeat(16, 2fr)`);
-//   grid.style.setProperty("grid-template-rows", `repeat(16, 2fr)`);
-//   updateGrid();
-// });
-
 createGrid();
-// updateGrid();
