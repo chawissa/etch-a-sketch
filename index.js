@@ -10,8 +10,12 @@ const createGrid = function () {
 };
 
 function updateGrid() {
-  const numSquare = prompt("Enter how many squares each row/column:", "16");
-  const userInput = +numSquare;
+  const numSquare = prompt(
+    "Enter how many squares(45 max) each row/column:",
+    "16"
+  );
+  let userInput = +numSquare;
+  userInput = userInput > 45 ? 45 : userInput < 1 ? 1 : userInput;
 
   grid.innerHTML = "";
   grid.style.setProperty("grid-template-columns", `repeat(${userInput}, 2fr)`);
